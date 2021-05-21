@@ -53,6 +53,7 @@ services:
     user: "${KONG_USER:-kong}"
     depends_on:
       - db
+      - kong-config
     environment:
       KONG_ADMIN_ACCESS_LOG: /dev/stdout
       KONG_ADMIN_ERROR_LOG: /dev/stderr
@@ -70,6 +71,10 @@ services:
 #      - kong_postgres_password
     networks:
       - kong-net
+#    volumes:
+#      - ./kong.yml:/usr/local/kong/declarative/kong.yml
+#      - ./kong.conf:/etc/kong/kong.conf.default
+#    command: cp /etc/kong/kong.conf.default /etc/kong/kong.conf
     ports:
       - "8000:8000/tcp"
       - "127.0.0.1:8001:8001/tcp"

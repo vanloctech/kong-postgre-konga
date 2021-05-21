@@ -26,3 +26,9 @@ Kiểm tra docker version
 ```shell
 docker --version
 ```
+
+Hướng dẫn cài đặt docker compose:
+
+```shell
+https://docs.docker.com/compose/install/
+```
